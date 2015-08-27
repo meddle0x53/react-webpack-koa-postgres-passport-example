@@ -8,17 +8,16 @@ exports.up = function(db, callback) {
       primaryKey: true,
       unsigned: true,
       notNull: true,
-      autoIncrement: true,
-      length: 10
+      autoIncrement: true
     },
     username: {
       type: 'string',
       unique: true,
-      notNull: true 
+      notNull: true
     },
     password: {
       type: 'string',
-      notNull: true 
+      notNull: true
     }
   }, callback);
 };
