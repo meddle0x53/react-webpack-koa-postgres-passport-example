@@ -1,0 +1,16 @@
+{
+  "development": {
+    "username": "blacky",
+    "password": "black",
+    "database": "black_stamp_dev",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "blacky",
+    "password": "???",
+    "database": "black_stamp_prod",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}
