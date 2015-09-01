@@ -5,6 +5,7 @@
 const fs = require("fs");
 const koa = require("koa");
 const mongoose = require("mongoose");
+const Sequelize = require('sequelize');
 const passport = require("koa-passport");
 
 /**
@@ -20,6 +21,22 @@ mongoose.connection.on("error", function(err) {
   console.log(err);
 });
 
+config.database.connection = new Sequelize(
+  config.database.database,
+  config.database.username || 'postgres',
+  config.database.password || '',
+  {
+    host: config.database.host || 'localhost',
+    dialect: config.database.dialect || 'sqlite',
+
+    pool: {
+      max: 5,
+      min: 0,
+      idle: 10000
+    }
+  }
+);
+
 /**
  * Load the models
  */
@@ -29,6 +46,7 @@ fs.readdirSync(modelsPath).forEach(function(file) {
     require(modelsPath + "/" + file);
   }
 });
+config.database.connection.sync();
 
 /**
  * Server
