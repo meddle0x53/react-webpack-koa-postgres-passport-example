@@ -2,7 +2,7 @@
 
 var path = require("path");
 var _ = require("lodash");
-var db = require('../database.json');
+var db = require('../config/database.json');
 
 var env = process.env.NODE_ENV = process.env.NODE_ENV || "development";
 
@@ -20,7 +20,7 @@ var specific = {
       name: "Koa React Gulp Mongoose Mocha - Dev",
       keys: [ "super-secret-hurr-durr" ],
     },
-    database: db.dev,
+    database: db.development,
     mongo: {
       url: "mongodb://localhost/koareactfullexample_dev",
     },
@@ -41,7 +41,7 @@ var specific = {
       port: process.env.PORT || 3000,
       name: "Koa React Gulp Mongoose Mocha",
     },
-    database: db.prod,
+    database: db.production,
     mongo: {
       url: "mongodb://localhost/koareactfullexample",
     },
