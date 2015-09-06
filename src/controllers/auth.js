@@ -41,11 +41,15 @@ exports.createUser = function *() {
     this.throw("Missing password", 400);
   }
 
-  var User = require("mongoose").model("User");
+  var User = require('../models/sql_user');
 
   try {
-    var user = new User({ username: this.request.body.username, password: this.request.body.password });
+    var user = User.build({
+      username: this.request.body.username,
+      password: this.request.body.password
+    });
     user = yield user.save();
+
     yield this.login(user);
   } catch (err) {
     this.throw(err);
