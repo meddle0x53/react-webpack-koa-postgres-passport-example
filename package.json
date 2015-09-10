@@ -1,11 +1,11 @@
 {
-  "name": "koa-react-full-example",
-  "version": "0.6.1",
-  "description": "Full example using Koa, React, Passport, Mongoose, Gulp, Mocha",
+  "name": "koa-react-postgres-example",
+  "version": "0.0.1",
+  "description": "Full example using Koa, React, Passport, Postgres, Mocha",
   "keywords": [
     "koa",
     "react",
-    "mongoose",
+    "postgres",
     "mocha",
     "webpack",
     "mocha",
