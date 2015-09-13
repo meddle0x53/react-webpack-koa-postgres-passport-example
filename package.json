@@ -6,6 +6,7 @@
     "koa",
     "react",
     "postgres",
+    "postgresql",
     "mocha",
     "webpack",
     "mocha",
