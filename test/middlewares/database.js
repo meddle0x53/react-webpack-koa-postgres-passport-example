@@ -21,3 +21,11 @@ exports.dropDatabase = function(cb) {
     yield Models.map(dropCollection);
   }).then(cb);
 };
+
+
+exports.cleanupDB = function (cb) {
+  var sequelize = require('../../config/config').database.connection;
+  co(function *() {
+    yield sequelize.sync(force: true);
+  }).then(cb);
+}
