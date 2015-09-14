@@ -51,5 +51,8 @@ describe("Auth", function() {
     it("should sign up");
   });
 
-  after(function(done) { databaseHelper.dropDatabase(done); });
+  after(function(done) {
+    databaseHelper.dropDatabase(done);
+    databaseHelper.cleanupDB(done);
+  });
 });
