@@ -40,7 +40,7 @@
     //
     // The following rules point out areas where you might have made mistakes.
     //
-    "comma-dangle": [2, "always-multiline"], // disallow or enforce trailing commas
+    "comma-dangle": [2, "never"], // disallow or enforce trailing commas
     "no-cond-assign": 2, // disallow assignment in conditional expressions
     "no-console": 0, // disallow use of console (off by default in the node environment)
     "no-constant-condition": 2, // disallow use of constant expressions in conditions
@@ -197,7 +197,7 @@
     "operator-linebreak": [2, "after"], // enforce operators to be placed before or after line breaks
     "padded-blocks": [2, "never"], // enforce padding within blocks
     "quote-props": [2, "as-needed"], // require quotes around object literal property names
-    "quotes": [2, "double"], // specify whether double or single quotes should be used
+    "quotes": [2, "single"], // specify whether double or single quotes should be used
     "semi": [1, "always"], // require or disallow use of semicolons instead of ASI
     "semi-spacing": [1, {"before": false, "after": true}], // enforce spacing before and after semicolons
     "sort-vars": 0, // sort variables within the same declaration block
