@@ -1,33 +1,23 @@
-"use strict";
-var mongoose = require("mongoose");
-var Count = mongoose.model("Count");
+'use strict';
+var Count = require('../models/sql_count');
 
 exports.getCount = function *() {
-  var count = yield Count.findOne().exec();
-  if (!count) {
-    count = new Count();
-  }
+  var count = yield Count.findTheOne();
   this.body = { count: count.value };
 };
 
 exports.increment = function *() {
-  var count = yield Count.findOne().exec();
-  if (!count) {
-    count = new Count();
-  }
+  var count = yield Count.findTheOne();
   ++count.value;
 
-  yield count.save();
+  count = yield count.save();
   this.body = { count: count.value };
 };
 
 exports.decrement = function *() {
-  var count = yield Count.findOne().exec();
-  if (!count) {
-    count = new Count();
-  }
+  var count = yield Count.findTheOne();
   --count.value;
 
-  yield count.save();
+  count = yield count.save();
   this.body = { count: count.value };
 };

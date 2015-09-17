@@ -1,9 +1,9 @@
-"use strict";
-var passport = require("koa-passport");
+'use strict';
+var passport = require('koa-passport');
 
 exports.signIn = function *() {
   var _this = this;
-  yield* passport.authenticate("local", function*(err, user, info) {
+  yield* passport.authenticate('local', function*(err, user, info) {
     if (err) {
       throw err;
     }
@@ -31,14 +31,14 @@ exports.signOut = function *() {
 
 exports.createUser = function *() {
   if (!this.request.body) {
-    this.throw("The body is empty", 400);
+    this.throw('The body is empty', 400);
   }
 
   if (!this.request.body.username) {
-    this.throw("Missing username", 400);
+    this.throw('Missing username', 400);
   }
   if (!this.request.body.password) {
-    this.throw("Missing password", 400);
+    this.throw('Missing password', 400);
   }
 
   var User = require('../models/sql_user');

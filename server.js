@@ -1,26 +1,20 @@
-"use strict";
+'use strict';
 /**
  * Dependencies
  */
-const fs = require("fs");
-const koa = require("koa");
-const mongoose = require("mongoose");
+const fs = require('fs');
+const koa = require('koa');
 const Sequelize = require('sequelize');
-const passport = require("koa-passport");
+const passport = require('koa-passport');
 
 /**
  * Config
  */
-const config = require("./config/config");
+const config = require('./config/config');
 
 /**
  * Connect to database
  */
-mongoose.connect(config.mongo.url);
-mongoose.connection.on("error", function(err) {
-  console.log(err);
-});
-
 config.database.connection = new Sequelize(
   config.database.database,
   config.database.username || 'postgres',
@@ -40,10 +34,10 @@ config.database.connection = new Sequelize(
 /**
  * Load the models
  */
-const modelsPath = config.app.root + "/src/models";
+const modelsPath = config.app.root + '/src/models';
 fs.readdirSync(modelsPath).forEach(function(file) {
-  if (~file.indexOf("js")) {
-    require(modelsPath + "/" + file);
+  if (~file.indexOf('js')) {
+    require(modelsPath + '/' + file);
   }
 });
 config.database.connection.sync();
@@ -53,16 +47,16 @@ config.database.connection.sync();
  */
 const app = module.exports = koa();
 
-require("./config/passport")(passport, config);
+require('./config/passport')(passport, config);
 
-require("./config/koa")(app, config, passport);
+require('./config/koa')(app, config, passport);
 
 // Routes
-require("./config/routes")(app, passport);
+require('./config/routes')(app, passport);
 
 // Start app
 if (!module.parent) {
   app.listen(config.app.port);
-  console.log("Server started, listening on port: " + config.app.port);
+  console.log('Server started, listening on port: ' + config.app.port);
 }
-console.log("Environment: " + config.app.env);
+console.log('Environment: ' + config.app.env);
