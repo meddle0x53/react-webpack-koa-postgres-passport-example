@@ -6,6 +6,13 @@
     "host": "localhost",
     "dialect": "postgres"
   },
+  "test": {
+    "username": "blacky",
+    "password": "black",
+    "database": "black_stamp_test",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
   "production": {
     "username": "blacky",
     "password": "???",

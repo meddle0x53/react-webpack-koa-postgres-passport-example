@@ -1,17 +1,16 @@
-"use strict";
-var LocalStrategy = require("passport-local").Strategy;
-var authenticator = require("../lib/authenticator");
+'use strict';
+var LocalStrategy = require('passport-local').Strategy;
+var authenticator = require('../lib/authenticator');
 var User = require('../src/models/sql_user');
 
 var serialize = function(user, done) {
   done(null, user.id);
 };
 
-
 var deserialize = function(id, done) {
   User.findOne({
     where: { id: id }
-  }).then(function (user) {
+  }).then(function(user) {
     done(null, user);
   });
 };
