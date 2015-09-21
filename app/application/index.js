@@ -1,30 +1,30 @@
-import React, { PropTypes } from "react";
-import TransitionGroup from "react/lib/ReactCSSTransitionGroup";
+import React, { PropTypes } from 'react';
+import TransitionGroup from 'react/lib/ReactCSSTransitionGroup';
 
-import{ RouteHandler } from "react-router";
+import{ RouteHandler } from 'react-router';
 
-import Navbar from "../components/navbar";
+import Navbar from '../components/navbar';
 
-import makeFullHeightComponent from "../composition/full-height";
+import makeFullHeightComponent from '../composition/full-height';
 
-import AuthStore from "../stores/auth";
+import AuthStore from '../stores/auth';
 
-import "../less/main.less";
+import '../less/main.less';
 
 const App = React.createClass({
-  displayName: "App",
+  displayName: 'App',
 
   propTypes: {
-    height: PropTypes.Number,
+    height: PropTypes.Number
   },
 
   contextTypes: {
-    router: PropTypes.func,
+    router: PropTypes.func
   },
 
   getInitialState() {
     return {
-      hasLoaded: false,
+      hasLoaded: false
     };
   },
 
@@ -43,7 +43,7 @@ const App = React.createClass({
   onLoad() {
     AuthStore.removeChangeListener(this.onLoad);
     this.setState({
-      hasLoaded: true,
+      hasLoaded: true
     });
   },
 
@@ -59,13 +59,13 @@ const App = React.createClass({
           </div>
       </div>
     );
-  },
+  }
 });
 
 const FullHeightApp = makeFullHeightComponent(App, () => {
   let height = window.innerHeight;
-  let navbarHeight = document.getElementsByClassName("main-container")[0].getBoundingClientRect().top;
-  let footerHeight = document.getElementsByClassName("footer")[0].offsetHeight;
+  let navbarHeight = document.getElementsByClassName('main-container')[0].getBoundingClientRect().top;
+  let footerHeight = document.getElementsByClassName('footer')[0].offsetHeight;
   return height - navbarHeight - footerHeight;
 });
 

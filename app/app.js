@@ -1,20 +1,20 @@
-import React, { PropTypes } from "react";
-import TransitionGroup from "react/lib/ReactCSSTransitionGroup";
-import Router, { Route, DefaultRoute, NotFoundRoute, Redirect } from "react-router";
+import React, { PropTypes } from 'react';
+import TransitionGroup from 'react/lib/ReactCSSTransitionGroup';
+import Router, { Route, DefaultRoute, NotFoundRoute, Redirect } from 'react-router';
 
-import Navbar from "./components/navbar";
-import { Authenticated as Layout, Anonymous as AnonymousLayout } from "./layouts";
+import Navbar from './components/navbar';
+import { Authenticated as Layout, Anonymous as AnonymousLayout } from './layouts';
 
-import Application from "./application";
+import Application from './application';
 
-import IndexPage from "./pages/index";
-import NotFoundPage from "./pages/notfound";
-import NullPage from "./pages/null";
-import SignInPage from "./pages/signin";
-import SignUpPage from "./pages/signup";
-import SignOut from "./pages/signout";
+import IndexPage from './pages/index';
+import NotFoundPage from './pages/notfound';
+import NullPage from './pages/null';
+import SignInPage from './pages/signin';
+import SignUpPage from './pages/signup';
+import SignOut from './pages/signout';
 
-const container = document.getElementById("content");
+const container = document.getElementById('content');
 
 const routes = (
   <Route handler={Application}>

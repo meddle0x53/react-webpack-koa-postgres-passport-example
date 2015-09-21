@@ -1,15 +1,15 @@
-import React, { Component, PropTypes } from "react";
+import React, { Component, PropTypes } from 'react';
 
-import { Link } from "react-router";
+import { Link } from 'react-router';
 
-import { Navbar, Nav, Glyphicon } from "react-bootstrap";
+import { Navbar, Nav, Glyphicon } from 'react-bootstrap';
 
-import { NavItemLink } from "react-router-bootstrap";
+import { NavItemLink } from 'react-router-bootstrap';
 
-import AuthStore from "../stores/auth";
+import AuthStore from '../stores/auth';
 
 export default class AppNavbar extends Component {
-  static displayName = "AppNavbar";
+  static displayName = 'AppNavbar';
 
   static propTypes = { brand: PropTypes.string };
   static defaultProps = { user: AuthStore.getUser() };
@@ -33,7 +33,7 @@ export default class AppNavbar extends Component {
 
   onStoreChange = () => {
     this.setState({
-      user: AuthStore.getUser(),
+      user: AuthStore.getUser()
     });
   }
 

@@ -1,16 +1,16 @@
-import React from "react";
-import request from "superagent";
+import React from 'react';
+import request from 'superagent';
 
-import { Button, Badge } from "react-bootstrap";
+import { Button, Badge } from 'react-bootstrap';
 
 const get = (url, cb) => {
   request.get(url)
-  .set("Content-Type", "application/json")
+  .set('Content-Type', 'application/json')
   .end(cb);
 };
 
 export default class Counter extends React.Component {
-  static displayName = "Counter";
+  static displayName = 'Counter';
   static propTypes = { initialCount: React.PropTypes.number };
   static defaultProps = { initialCount: 0 };
 
@@ -20,7 +20,7 @@ export default class Counter extends React.Component {
   }
 
   componentWillMount() {
-    get("/value", (err, res) => {
+    get('/value', (err, res) => {
       if (err) {
         console.log(err);
         return;
@@ -31,7 +31,7 @@ export default class Counter extends React.Component {
 
   onClickInc = (event) => {
     event.preventDefault();
-    get("/inc", (err, res) => {
+    get('/inc', (err, res) => {
       if (err) {
         console.log(err);
         return;
@@ -42,7 +42,7 @@ export default class Counter extends React.Component {
 
   onClickDec = (event) => {
     event.preventDefault();
-    get("/dec", (err, res) => {
+    get('/dec', (err, res) => {
       if (err) {
         console.log(err);
         return;

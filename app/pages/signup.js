@@ -1,11 +1,11 @@
-import React, { Component, PropTypes } from "react";
+import React, { Component, PropTypes } from 'react';
 
-import { Col, Input, Button } from "react-bootstrap";
+import { Col, Input, Button } from 'react-bootstrap';
 
-import AuthStore from "../stores/auth";
+import AuthStore from '../stores/auth';
 
 export default class SignUp extends Component {
-  static displayName = "SignUp";
+  static displayName = 'SignUp';
   static contextTypes = { router: PropTypes.func };
 
   constructor(props) {
@@ -23,9 +23,9 @@ export default class SignUp extends Component {
     if (password === repeatPassword && password.trim()) {
       AuthStore.signUp(username, password, (err, user) => {
         if (err || !user) {
-          return this.setState({ error: "Could not Create the User" });
+          return this.setState({ error: 'Could not Create the User' });
         }
-        this.context.router.replaceWith("index");
+        this.context.router.replaceWith('index');
       });
     }
   }
@@ -35,7 +35,7 @@ export default class SignUp extends Component {
       <div>
         <h1>Sign Up</h1>
         <Col md={4} mdOffset={4}>
-          <form onSubmit={this.handleSubmit} className={this.state.error ? "has-error" : null}>
+          <form onSubmit={this.handleSubmit} className={this.state.error ? 'has-error' : null}>
             <Input type="text" ref="username" placeholder="username" label="Username" />
             <Input type="password" ref="password" placeholder="password" label="Password" />
             <Input type="password" ref="repeatPassword" placeholder="password" label="Repeat Password" />

@@ -1,7 +1,7 @@
-import React, { PropTypes, Component } from "react";
+import React, { PropTypes, Component } from 'react';
 
 export default class NotFound extends Component {
-  static displayName = "NotFoundPage";
+  static displayName = 'NotFoundPage';
   static contextTypes = { router: PropTypes.func };
 
   constructor() {

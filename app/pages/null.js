@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export default class Null extends Component {
-  static displayName = "NullPage";
+  static displayName = 'NullPage';
   constructor() {
     super();
   }

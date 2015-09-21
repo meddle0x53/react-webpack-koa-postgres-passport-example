@@ -1,15 +1,14 @@
-import React, { Component, PropTypes } from "react";
-import { Link } from "react-router";
+import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
 
-import { Col, Input, Button, Row } from "react-bootstrap";
+import { Col, Input, Button, Row } from 'react-bootstrap';
 
-import AuthStore from "../stores/auth";
+import AuthStore from '../stores/auth';
 
 export default class SignIn extends Component {
-  static displayName = "SignInPage";
+  static displayName = 'SignInPage';
 
   static contextTypes = { router: PropTypes.func.isRequired };
-  static attemptedTransition = null;
   static defaultProps = { initialError: false };
 
   constructor(props) {
@@ -26,13 +25,15 @@ export default class SignIn extends Component {
     AuthStore.removeChangeListener(this.retryTransition);
   }
 
+  static attemptedTransition = null;
+
   retryTransition = () => {
     if (SignIn.attemptedTransition) {
       let transition = SignIn.attemptedTransition;
       SignIn.attemptedTransition = null;
       transition.retry();
     } else {
-      this.context.router.replaceWith("index");
+      this.context.router.replaceWith('index');
     }
   }
 
@@ -61,7 +62,7 @@ export default class SignIn extends Component {
             anim id est laborum.</p>
           </Col>
           <Col md={4}>
-            <form onSubmit={this.handleSubmit} className={this.state.error ? "has-error" : null}>
+            <form onSubmit={this.handleSubmit} className={this.state.error ? 'has-error' : null}>
               <Input type="text" ref="username" placeholder="username" label="Username" />
               <Input type="password" ref="password" placeholder="password" label="Password" />
               <Button type="submit" bsStyle="success" className="pull-right">Sign In</Button>

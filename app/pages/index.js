@@ -1,8 +1,8 @@
-import React from "react";
-import Counter from "../components/counter";
+import React from 'react';
+import Counter from '../components/counter';
 
 export default class Index extends React.Component {
-  static displayName = "IndexPage";
+  static displayName = 'IndexPage';
   constructor() {
     super();
   }
