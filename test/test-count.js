@@ -1,58 +1,56 @@
-"use strict";
-var mongoose = require("mongoose");
-var should = require("should");
-var app = require("../server");
-var request = require("supertest").agent(app.listen());
-var databaseHelper = require("./middlewares/database");
-var authHelper = require("./middlewares/authenticator");
+'use strict';
+var should = require('should');
+var app = require('../server');
+var request = require('supertest').agent(app.listen());
+var databaseHelper = require('./middlewares/database');
+var authHelper = require('./middlewares/authenticator');
 
 // support for es6 generators
-var co = require("co");
+var co = require('co');
 
-describe("Count", function() {
-  // Model
-  var CountModel = mongoose.model("Count");
+describe('Count', function() {
+  var CountModel = require('../src/models/sql_count');
   var gCount = 1;
 
   before(co.wrap(function *() {
-    var c = new CountModel({ value: gCount });
+    var c = CountModel.build({ value: gCount });
     yield [
       c.save(),
-      authHelper.createUser(),
+      authHelper.createUser()
     ];
   }));
 
-  describe("Anonymous calls", function() {
-    it("should return 401 /value", function(done) {
-      request.get("/value")
-      .accept("json")
+  describe('Anonymous calls', function() {
+    it('should return 401 /value', function(done) {
+      request.get('/value')
+      .accept('json')
       .expect(401)
       .end(done);
     });
 
-    it("should return 401 /inc", function(done) {
-      request.get("/inc")
-      .accept("json")
+    it('should return 401 /inc', function(done) {
+      request.get('/inc')
+      .accept('json')
       .expect(401)
       .end(done);
     });
 
-    it("should return 401 /dec", function(done) {
-      request.get("/dec")
-      .accept("json")
+    it('should return 401 /dec', function(done) {
+      request.get('/dec')
+      .accept('json')
       .expect(401)
       .end(done);
     });
   });
 
-  describe("Auth calls", function() {
+  describe('Auth calls', function() {
     before(function(done) {
       authHelper.signAgent(request, done);
     });
 
-    it("should fetch value", function(done) {
-      request.get("/value")
-      .accept("json")
+    it('should fetch value', function(done) {
+      request.get('/value')
+      .accept('json')
       .expect(200)
       .end(function(err, res) {
         if (err) { return done(err); }
@@ -62,9 +60,9 @@ describe("Count", function() {
       });
     });
 
-    it("should increment value", function(done) {
-      request.get("/inc")
-      .accept("json")
+    it('should increment value', function(done) {
+      request.get('/inc')
+      .accept('json')
       .expect(200)
       .end(function(err, res) {
         if (err) { return done(err); }
@@ -75,9 +73,9 @@ describe("Count", function() {
       });
     });
 
-    it("should decrement value", function(done) {
-      request.get("/dec")
-      .accept("json")
+    it('should decrement value', function(done) {
+      request.get('/dec')
+      .accept('json')
       .expect(200)
       .end(function(err, res) {
         if (err) { return done(err); }
@@ -90,7 +88,6 @@ describe("Count", function() {
   });
 
   after(function(done) {
-    databaseHelper.dropDatabase(done);
     databaseHelper.cleanupDB(done);
   });
 });
