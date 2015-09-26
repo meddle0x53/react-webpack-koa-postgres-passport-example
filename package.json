@@ -53,7 +53,6 @@
     "koa-router": "~5.1.2",
     "koa-static-cache": "~3.1.2",
     "lodash": "~3.10.0",
-    "mongoose": "~4.0.1",
     "passport-local": "1.0.x",
     "pg": "^4.4.1",
     "pg-hstore": "^2.3.2",
