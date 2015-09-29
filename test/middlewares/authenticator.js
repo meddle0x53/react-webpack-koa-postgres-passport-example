@@ -1,7 +1,7 @@
 'use strict';
 var should = require('should');
 
-var User = require('../../src/models/sql_user');
+var User = require('../../src/models/user');
 
 const CREDENTIALS = { u: 'test@email.com', p: '123123123' };
 exports.LOGIN_URL = '/auth';

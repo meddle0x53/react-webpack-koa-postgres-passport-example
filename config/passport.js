@@ -1,7 +1,7 @@
 'use strict';
 var LocalStrategy = require('passport-local').Strategy;
 var authenticator = require('../lib/authenticator');
-var User = require('../src/models/sql_user');
+var User = require('../src/models/user');
 
 var serialize = function(user, done) {
   done(null, user.id);

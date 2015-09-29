@@ -41,7 +41,7 @@ exports.createUser = function *() {
     this.throw('Missing password', 400);
   }
 
-  var User = require('../models/sql_user');
+  var User = require('../models/user');
 
   try {
     var user = User.build({
