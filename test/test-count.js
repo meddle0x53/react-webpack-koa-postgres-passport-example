@@ -9,7 +9,7 @@ var authHelper = require('./middlewares/authenticator');
 var co = require('co');
 
 describe('Count', function() {
-  var CountModel = require('../src/models/sql_count');
+  var CountModel = require('../src/models/count');
   var gCount = 1;
 
   before(co.wrap(function *() {

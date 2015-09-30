@@ -1,5 +1,5 @@
 'use strict';
-var Count = require('../models/sql_count');
+var Count = require('../models/count');
 
 exports.getCount = function *() {
   var count = yield Count.findTheOne();
