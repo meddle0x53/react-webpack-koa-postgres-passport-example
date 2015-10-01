@@ -1,4 +1,5 @@
 'use strict';
+
 var Count = require('../models/count');
 
 exports.getCount = function *() {
