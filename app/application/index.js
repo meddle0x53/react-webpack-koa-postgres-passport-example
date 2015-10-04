@@ -51,7 +51,7 @@ const App = React.createClass({
     let key = this.context.router.getCurrentPath();
     return (
       <div>
-        <Navbar brand="React Koa Gulp Mongoose Mocha Demo" />
+        <Navbar brand="React Koa Gulp Postgres Mocha Demo" />
           <div className="transition-crop main-container" style={{ minHeight: this.props.height }}>
             <TransitionGroup transitionName="transition">
               <RouteHandler key={key} />
