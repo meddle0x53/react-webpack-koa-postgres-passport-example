@@ -9,7 +9,7 @@
 [![devdependencies][devdeps.img]][devdeps.url]
 [![Tasks][waffle.img]][waffle.url]
 
-Full example using Koa, React, Passport, Mongoose, Webpack, Mocha, and on Travis
+Full example using Koa, React, Passport, Postgres, Webpack and Mocha
 
 This example contains a MVC pattern that presents a simple counter to the client that increments and decrements a value in the Mongo Database with Mongoose. The UI is all handled with ReactJS. It uses the yield keyword from ES6.
 
