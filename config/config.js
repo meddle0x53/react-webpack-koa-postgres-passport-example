@@ -17,7 +17,7 @@ var specific = {
   development: {
     app: {
       port: 3000,
-      name: 'Koa React Gulp Mongoose Mocha - Dev',
+      name: 'Koa React Gulp Postgres Mocha - Dev',
       keys: [ 'super-secret-hurr-durr' ]
     },
     database: db.development,
@@ -28,7 +28,7 @@ var specific = {
   test: {
     app: {
       port: 3001,
-      name: 'Koa React Gulp Mongoose Mocha - Test realm',
+      name: 'Koa React Gulp Postgres Mocha - Test realm',
       keys: [ 'super-secret-hurr-durr' ]
     },
     database: db.test,
@@ -39,7 +39,7 @@ var specific = {
   production: {
     app: {
       port: process.env.PORT || 3000,
-      name: 'Koa React Gulp Mongoose Mocha'
+      name: 'Koa React Gulp Postgres Mocha'
     },
     database: db.production,
     mongo: {
