@@ -13,7 +13,7 @@ Full example using Koa, React, Passport, Postgres, Webpack and Mocha
 
 This example contains a MVC pattern that presents a simple counter to the client that increments and decrements a value in the Postgres Database. The UI is all handled with ReactJS. It uses the yield keyword from ES6.
 
-This projects uses bleeding-edge technology. It also uses unstable version of Mongoose (3.9) for the support of yield.
+This projects uses bleeding-edge technology.
 
 ### Prerequisite
 
