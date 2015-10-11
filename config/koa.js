@@ -1,4 +1,5 @@
 'use strict';
+
 const path = require('path');
 const serve = require('koa-static-cache');
 const session = require('koa-generic-session');
