@@ -2,7 +2,7 @@
 const path = require('path');
 const serve = require('koa-static-cache');
 const session = require('koa-generic-session');
-const MongoStore = require('koa-sess-mongo-store');
+const PgStore = require('koa-pg-session');
 const responseTime = require('koa-response-time');
 const logger = require('koa-logger');
 const views = require('co-views');
@@ -33,8 +33,7 @@ module.exports = function(app, config, passport) {
   }
 
   app.use(session({
-    key: 'koareactfullexample.sid',
-    store: new MongoStore({ url: config.mongo.url })
+    store: new PgStore("postgres://blacky:black@localhost/black_stamp_dev")
   }));
 
   app.use(bodyParser());
