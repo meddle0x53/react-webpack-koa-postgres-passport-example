@@ -19,7 +19,7 @@ This projects uses bleeding-edge technology.
 
 * [NodeJS](http://nodejs.org/download/) > 0.11.16 || 0.12
 * [npm](https://www.npmjs.org/)
-* [MongoDB](http://www.mongodb.org/downloads)
+* [Postgres](http://www.postgresql.org/download)
 
 ### Installation
 
