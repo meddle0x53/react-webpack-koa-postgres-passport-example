@@ -1,14 +1,5 @@
 # koa-react-full-example
 
-[![Join the chat at https://gitter.im/dozoisch/koa-react-full-example](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dozoisch/koa-react-full-example?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-[![Pair on this](https://tf-assets-staging.s3.amazonaws.com/badges/thinkful_repo_badge.svg)](http://start.thinkful.com/react/?utm_source=github&utm_medium=badge&utm_campaign=koa-react-full-example)
-
-[![Build Status][travis.img]][travis.url]
-[![dependencies][deps.img]][deps.url]
-[![devdependencies][devdeps.img]][devdeps.url]
-[![Tasks][waffle.img]][waffle.url]
-
 Full example using Koa, React, Passport, Postgres, Webpack and Mocha
 
 This example contains a MVC pattern that presents a simple counter to the client that increments and decrements a value in the Postgres Database. The UI is all handled with ReactJS. It uses the yield keyword from ES6.
@@ -53,21 +44,3 @@ To run the project, you need two terminals.
 ### License
 
 The plugin is under MIT license, please see the LICENSE file provided with the module.
-
-### Soon
-
-Updates to come when I get some time:
-
- - Server side rendering with prod webpack config
- - Redux
- - Code coverage with iSparta istanbul.
- - ES6/Babel server side
-
-[travis.img]: https://api.travis-ci.org/dozoisch/koa-react-full-example.svg
-[travis.url]: https://travis-ci.org/dozoisch/koa-react-full-example
-[deps.img]: https://david-dm.org/dozoisch/koa-react-full-example.svg
-[deps.url]: https://david-dm.org/dozoisch/koa-react-full-example
-[devdeps.img]: https://david-dm.org/dozoisch/koa-react-full-example/dev-status.svg
-[devdeps.url]: https://david-dm.org/dozoisch/koa-react-full-example#info=devDependencies
-[waffle.img]: https://badge.waffle.io/dozoisch/koa-react-full-example.png?label=planned&title=Ready
-[waffle.url]: https://waffle.io/dozoisch/koa-react-full-example
